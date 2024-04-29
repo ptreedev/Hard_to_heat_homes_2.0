@@ -1,0 +1,12 @@
+.env
+extensions/
+bin/
+lib/
+cli/
+.pytest_cache/
+node_modules/
+include/
+argv.json
+package-lock.json
+package.json
+pyvenv.cfg
