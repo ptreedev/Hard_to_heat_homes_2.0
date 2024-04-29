@@ -10,3 +10,4 @@ argv.json
 package-lock.json
 package.json
 pyvenv.cfg
+copilot/
