@@ -23,5 +23,5 @@ EPC_ENCODED_API_TOKEN
 # To run app
 
 ```shell
-Flask run
+flask run
 ```
