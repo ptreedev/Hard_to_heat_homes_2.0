@@ -1,4 +1,4 @@
-dummy_data = {
+epc_dummy_data = {
     "column-names": [
         "lmk-key",
         "address1",
@@ -91,7 +91,7 @@ dummy_data = {
         "fixed-lighting-outlets-count",
         "low-energy-fixed-light-count",
         "uprn",
-        "uprn-source"
+        "uprn-source",
     ],
     "rows": [
         {
@@ -186,7 +186,7 @@ dummy_data = {
             "hot-water-energy-eff": "Good",
             "low-energy-lighting": "100",
             "walls-description": "Cavity wall, filled cavity",
-            "hotwater-description": "From main system"
+            "hotwater-description": "From main system",
         }
-    ]
+    ],
 }
