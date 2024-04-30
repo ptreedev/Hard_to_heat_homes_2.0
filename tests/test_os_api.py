@@ -2,6 +2,7 @@ import urllib.request
 from urllib.parse import urlencode
 import os
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
@@ -14,7 +15,9 @@ def os_api_call(headers, params):
     full_url = f'{BASE_URL}{urlencode(params)}'
     try: 
         with urllib.request.urlopen(urllib.request.Request(full_url, headers=headers)) as response:
-            return response.body
+            response_body = response.read()
+            return json.loads(response_body)
+           
     except Exception:
         return False
 
