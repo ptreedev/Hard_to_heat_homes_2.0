@@ -11,15 +11,11 @@ app = Flask(__name__)
 def get_props(props):
     result = []
     for prop in props:
-        result.append(
-            Property(
-                prop["uprn"],
-                prop["current-energy-rating"],
-                prop["current-energy-efficiency"],
-                prop["address"],
-                prop["postcode"],
-            )
-        )
+        building = Property(prop['uprn'])
+        building.epc_rating = prop["current-energy-rating"]
+        building.epc_score = prop["current-energy-efficiency"]
+        building.address = f'{prop["address"]}, {prop["postcode"]}'
+        result.append(building)
 
     return result
 
