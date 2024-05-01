@@ -1,0 +1,138 @@
+{
+    "type": "FeatureCollection",
+    "links": [
+        {
+            "href": "https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-building-2/items?limit=1&filter=oslandusetiera%20LIKE%20%27Residential%20Accommodation%27%20AND%20ismainbuilding%3Dtrue&key=eQZohxBxjpHhrXsRrcVCxu5TI1XFObsw",
+            "rel": "self",
+            "type": "application/geo+json",
+            "title": "All features from the 'Building v2' collection"
+        },
+        {
+            "href": "https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-building-2/items?offset=1&limit=1&filter=oslandusetiera%20LIKE%20%27Residential%20Accommodation%27%20AND%20ismainbuilding%3Dtrue&key=eQZohxBxjpHhrXsRrcVCxu5TI1XFObsw",
+            "rel": "next",
+            "type": "application/geo+json",
+            "title": "Next page"
+        }
+    ],
+    "timeStamp": "2024-05-01T10:47:20.041364195Z",
+    "numberReturned": 1,
+    "features": [
+        {
+            "id": "000000fb-5e7c-456a-aee1-0b1caf222da3",
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.1982288,
+                            52.3370081
+                        ],
+                        [
+                            -0.1982051,
+                            52.3370438
+                        ],
+                        [
+                            -0.198156,
+                            52.3371159
+                        ],
+                        [
+                            -0.1980419,
+                            52.3370872
+                        ],
+                        [
+                            -0.1980795,
+                            52.3370293
+                        ],
+                        [
+                            -0.1980896,
+                            52.3370151
+                        ],
+                        [
+                            -0.1981555,
+                            52.3370315
+                        ],
+                        [
+                            -0.1981792,
+                            52.3369958
+                        ],
+                        [
+                            -0.1982288,
+                            52.3370081
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "osid": "000000fb-5e7c-456a-aee1-0b1caf222da3",
+                "theme": "Buildings",
+                "isinsite": true,
+                "changetype": "New",
+                "buildinguse": "Residential Accommodation",
+                "description": "Detached House",
+                "versiondate": "2024-03-15",
+                "connectivity": "Standalone",
+                "sitereference": [
+                    {
+                        "siteid": "fc4fa250-926f-490c-8fa5-693c5a191b01",
+                        "buildingid": "000000fb-5e7c-456a-aee1-0b1caf222da3",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "uprnreference": [
+                    {
+                        "uprn": 100090095606,
+                        "buildingid": "000000fb-5e7c-456a-aee1-0b1caf222da3",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "ismainbuilding": true,
+                "oslandusetiera": "Residential Accommodation",
+                "primarysite_id": "fc4fa250-926f-490c-8fa5-693c5a191b01",
+                "mainbuilding_id": null,
+                "basementpresence": "Not Present",
+                "buildingage_year": null,
+                "geometry_area_m2": 89.132,
+                "buildingpartcount": 1,
+                "connectivitycount": 0,
+                "addresscount_other": 0,
+                "addresscount_total": 1,
+                "buildingage_period": "1980-1989",
+                "buildingage_source": "Verisk",
+                "containingsitecount": 1,
+                "geometry_updatedate": "2024-01-31",
+                "constructionmaterial": "Brick Or Block Or Stone",
+                "buildingpartreference": [
+                    {
+                        "buildingid": "000000fb-5e7c-456a-aee1-0b1caf222da3",
+                        "buildingpartid": "fdc850dd-d48b-4f03-8a97-d4fcac4de37a",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "buildingage_updatedate": "2024-03-13",
+                "buildinguse_updatedate": "2024-01-31",
+                "description_updatedate": "2024-01-31",
+                "versionavailabletodate": null,
+                "addresscount_commercial": 0,
+                "basementpresence_source": "Verisk",
+                "connectivity_updatedate": "2024-01-31",
+                "mainbuilding_updatedate": "2024-01-31",
+                "addresscount_residential": 1,
+                "buildingage_evidencedate": "2016-07-05",
+                "versionavailablefromdate": "2024-03-16T00:00:00Z",
+                "buildingage_capturemethod": "Third Party Unknown",
+                "basementpresence_updatedate": "2024-03-09",
+                "constructionmaterial_source": "Verisk",
+                "basementpresence_evidencedate": "2022-12-23",
+                "basementpresence_capturemethod": "Automated Process",
+                "basementpresence_selfcontained": "Not Present",
+                "constructionmaterial_updatedate": "2024-03-13",
+                "buildingage_thirdpartyprovenance": "Domestic Energy Performance Certificate (England And Wales)",
+                "constructionmaterial_evidencedate": "2016-07-05",
+                "constructionmaterial_capturemethod": "Third Party Unknown",
+                "basementpresence_thirdpartyprovenance": "Infill Modelling",
+                "constructionmaterial_thirdpartyprovenance": "Domestic Energy Performance Certificate (England And Wales)"
+            }
+        }
+    ]
+}
