@@ -10,10 +10,10 @@ TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
 QUERY_PARAMS = {"uprn": "200002791"}
 BASE_URL = "https://epc.opendatacommunities.org/api/v1/domestic/search?"
 HEADERS = {"Accept": "application/json", "Authorization": f"Basic {TOKEN}"}
-
+response_data = epc_api_call(HEADERS, QUERY_PARAMS)
 
 def test_200_response():
-    assert type(epc_api_call(HEADERS, QUERY_PARAMS)) is dict
+    assert type(response_data) is dict
 
 
 def test_200_response_invalid_uprn():
@@ -25,17 +25,15 @@ def test_not_200_response():
 
 
 def test_result_is_JSON():
-    assert epc_api_call(HEADERS, QUERY_PARAMS) == epc_dummy_data
+    assert response_data == epc_dummy_data
 
 
 def test_dummy_data_address():
-    response_data = epc_api_call(HEADERS, QUERY_PARAMS)
     assert response_data["rows"][0]["address"] == epc_dummy_data["rows"][0]["address"]
     assert response_data["rows"][0]["address"] == "30 Alexandra Road, Muswell Hill"
 
 
 def test_dummy_data_epc_rating():
-    response_data = epc_api_call(HEADERS, QUERY_PARAMS)
     assert (
         response_data["rows"][0]["current-energy-rating"]
         == epc_dummy_data["rows"][0]["current-energy-rating"]
@@ -44,7 +42,6 @@ def test_dummy_data_epc_rating():
 
 
 def test_dummy_data_epc_score():
-    response_data = epc_api_call(HEADERS, QUERY_PARAMS)
     assert (
         response_data["rows"][0]["current-energy-efficiency"]
         == epc_dummy_data["rows"][0]["current-energy-efficiency"]
