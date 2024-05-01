@@ -25,7 +25,8 @@ def os_api_call(headers, params):
         return False
     
     
-response = os_api_call(HEADERS, {"key": OS_API_KEY, "limit" : 1})
+response = os_api_call(HEADERS, {"key": OS_API_KEY, "limit" : 1, "filter" : "oslandusetiera LIKE 'Residential Accommodation' AND ismainbuilding=true"})
+# https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-building-2/items?key=eQZohxBxjpHhrXsRrcVCxu5TI1XFObsw&limit=1&filter=oslandusetiera%20LIKE%20'Residential Accommodation'%20AND%20ismainbuilding=true
 
 
 def test_not_200_response():
