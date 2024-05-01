@@ -66,7 +66,7 @@ def test_get_uprns_from_one_building():
         assert first_building["uprnreference"][i]['uprn'] == os_dummy_data["features"][0]["properties"]["uprnreference"][i]["uprn"]
 
 
-def test_accessing_desired_response_data():
+def test_accessing_desired_response_data_for_multiple_buildings():
     for i in range(len(response["features"])):
         response_building = response["features"][i]["properties"]
         dummy_data_building = os_dummy_data["features"][i]["properties"]
