@@ -3,8 +3,13 @@ from src.epc_api import epc_api_call
 import os
 from dotenv import load_dotenv
 from src.property import Property
+import json 
 
 load_dotenv()
+
+with open("src/os_dummy_data.json", "r") as data:
+    os_dummy_data = json.load(data)
+
 
 TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
 QUERY_PARAMS = {"uprn": "200002791"}
@@ -45,3 +50,7 @@ def test_property_has_correct_attributes_from_api_call():
     assert dummy_property.uprn == "200002791"
     assert dummy_property.epc_score == "63"
     assert dummy_property.address == "30 Alexandra Road, Muswell Hill, N10 2RT"
+
+def test_property_has_uprn_from_os_api():
+    dummy_property = Property(os_dummy_data["features"][0]["properties"]["uprnreference"][0]["uprn"], None, None, None, None)
+    assert dummy_property.uprn == 100061342030

@@ -6,7 +6,7 @@ import json
 
 load_dotenv()
 
-with open("src/os_dummy_data.json", "r") as data:
+with open("src/os_dummy_data.json") as data:
     os_dummy_data = json.load(data)
 
 HEADERS = {"Accept": "application/json"}
