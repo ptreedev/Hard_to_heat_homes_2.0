@@ -52,9 +52,16 @@ def test_features_array_is_populated():
 
 
 def test_accessing_desired_response_data():
-    for i in range(len(response['features'])):
+    assert response["features"][0]["properties"]["connectivity"] == "Semi-Connected"
+    for i in range(len(response["features"])):
+        assert (
+            response["features"][i]["properties"]["connectivity"]
+            == os_dummy_data["features"][i]["properties"]["connectivity"]
+        )
         for j in range(len(response["features"][i]["properties"]["uprnreference"])):
             assert (
                 response["features"][i]["properties"]["uprnreference"][j]["uprn"]
-                == os_dummy_data["features"][i]["properties"]["uprnreference"][j]["uprn"]
+                == os_dummy_data["features"][i]["properties"]["uprnreference"][j][
+                    "uprn"
+                ]
             )
