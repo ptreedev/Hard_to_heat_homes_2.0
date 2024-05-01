@@ -61,9 +61,13 @@ def test_accessing_desired_response_data():
     )
     assert year == "1945-1959"
 
+    # year = "buildingage_year" if "buildingage_year" else "buildingage_period"
     for i in range(len(response["features"])):
         response_building = response["features"][i]["properties"]
         dummy_data_building = os_dummy_data["features"][i]["properties"]
+        
+        year = "buildingage_year" if response_building["buildingage_year"] else "buildingage_period"
+        assert response_building[year] == dummy_data_building[year]
         assert response_building["connectivity"] == dummy_data_building["connectivity"]
         for j in range(len(response_building["uprnreference"])):
             assert (
