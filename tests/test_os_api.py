@@ -23,6 +23,9 @@ def os_api_call(headers, params):
 
     except Exception:
         return False
+    
+    
+response = os_api_call(HEADERS, {"key": OS_API_KEY, "limit" : 1})
 
 
 def test_not_200_response():
@@ -30,9 +33,8 @@ def test_not_200_response():
 
 
 def test_200_response():
-    assert type(os_api_call(HEADERS, {"key": OS_API_KEY})) is dict
+    assert type(response) is dict
 
 
-def test_features_array_is_populated():
-    response = os_api_call(HEADERS, {"key": OS_API_KEY})
+def test_features_array_is_populated():    
     assert len(response["features"]) > 0
