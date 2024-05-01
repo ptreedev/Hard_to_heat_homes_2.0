@@ -6,3 +6,4 @@ class Property():
         self.address = ''
         self.age = ''
         self.connectivity = ''
+        self.material = ''
