@@ -6,7 +6,7 @@ import json
 
 load_dotenv()
 
-with open("src/os_dummy_data.json", 'r') as data:
+with open("src/os_dummy_data.json", "r") as data:
     os_dummy_data = json.load(data)
 
 HEADERS = {"Accept": "application/json"}
@@ -52,5 +52,9 @@ def test_features_array_is_populated():
 
 
 def test_accessing_desired_response_data():
-    for i in range(len(response["features"][0]["properties"]["uprnreference"])):
-        assert response["features"][0]["properties"]["uprnreference"][i]["uprn"] == os_dummy_data["features"][0]["properties"]["uprnreference"][i]["uprn"]
+    for i in range(len(response['features'])):
+        for j in range(len(response["features"][i]["properties"]["uprnreference"])):
+            assert (
+                response["features"][i]["properties"]["uprnreference"][j]["uprn"]
+                == os_dummy_data["features"][i]["properties"]["uprnreference"][j]["uprn"]
+            )
