@@ -51,7 +51,7 @@ def test_features_array_is_populated():
     assert len(response["features"]) > 0
 
 
-def test_accessing_desired_response_data():
+def test_one_building_accessing_desired_response_data():
     first_building = response["features"][0]["properties"]
     assert first_building["connectivity"] == "Semi-Connected"
     year = (
@@ -60,8 +60,11 @@ def test_accessing_desired_response_data():
         else first_building["buildingage_period"]
     )
     assert year == "1945-1959"
+    assert first_building["constructionmaterial"] == "Brick Or Block Or Stone"
 
-    # year = "buildingage_year" if "buildingage_year" else "buildingage_period"
+
+
+def test_accessing_desired_response_data():
     for i in range(len(response["features"])):
         response_building = response["features"][i]["properties"]
         dummy_data_building = os_dummy_data["features"][i]["properties"]
@@ -74,3 +77,4 @@ def test_accessing_desired_response_data():
                 response_building["uprnreference"][j]["uprn"]
                 == dummy_data_building["uprnreference"][j]["uprn"]
             )
+
