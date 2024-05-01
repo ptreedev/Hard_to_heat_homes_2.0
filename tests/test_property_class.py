@@ -59,5 +59,7 @@ def test_property_has_uprn_from_os_api():
 
 def test_property_has_relevant_data_from_os_api():
     dummy_property.age = '1945-1959'
+    dummy_property.connectivity = 'Semi-Connected'
     assert dummy_property.age == os_dummy_data["features"][0]["properties"]["buildingage_period"]
     assert dummy_property.connectivity == os_dummy_data["features"][0]["properties"]["connectivity"]
+    assert dummy_property.material == os_dummy_data["features"][0]["properties"]["contructionmaterial"]

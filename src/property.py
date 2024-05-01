@@ -5,3 +5,4 @@ class Property():
         self.epc_score = ''
         self.address = ''
         self.age = ''
+        self.connectivity = ''
