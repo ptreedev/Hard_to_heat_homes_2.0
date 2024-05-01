@@ -2,6 +2,7 @@ from src.epc_api import epc_api_call
 from src.property import Property
 from dotenv import load_dotenv
 import os 
+from app import get_props
 
 load_dotenv()
 
@@ -12,14 +13,6 @@ HEADERS = {
         'Accept': 'application/json',
         'Authorization': f'Basic {TOKEN}'
     }
-
-def get_props(props):
-    result = []
-    for prop in props:
-        result.append(Property(prop['uprn'], prop['current-energy-rating'], prop['current-energy-efficiency'], prop['address'], prop['postcode']))
-
-    # print(f'>>>>>>>{result[0].address}')
-    return result
 
 
 def test_returns_two_rows_of_properties():
