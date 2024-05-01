@@ -52,7 +52,11 @@ def test_features_array_is_populated():
 
 
 def test_accessing_desired_response_data():
-    assert response["features"][0]["properties"]["connectivity"] == "Semi-Connected"
+    first_building = response["features"][0]["properties"]
+    assert first_building["connectivity"] == "Semi-Connected"
+    year = first_building["buildingage_year"] if first_building["buildingage_year"] else first_building["buildingage_period"]
+    assert year == "1945-1959"
+    
     for i in range(len(response["features"])):
         assert (
             response["features"][i]["properties"]["connectivity"]
