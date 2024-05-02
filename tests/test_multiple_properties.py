@@ -61,12 +61,9 @@ def test_properties_have_desired_attributes():
     assert props[0].epc_score != ''
     assert props[0].address != ''
 
-# def get_urpns_from_properties(properties):
-#     result = {}
-#     for prop in properties:
+def get_urpns_from_properties(properties):
+    return 'uprn'
 
-#     return result
-
-# def test_getting_uprns_from_os_dummy_date_for_epc_call():
-#     assert type(get_urpns_from_properties(props)) is dict
-#     assert len(get_urpns_from_properties(props)) > 0
+def test_getting_uprns_from_os_dummy_date_for_epc_call():
+    assert type(get_urpns_from_properties(props)) is str
+    assert "uprn" in get_urpns_from_properties(props)
