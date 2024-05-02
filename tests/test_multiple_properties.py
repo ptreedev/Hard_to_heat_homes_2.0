@@ -34,7 +34,12 @@ def get_props_from_os(list_of_buildings):
     for building in range(len(list_of_buildings)):
         uprn_array = list_of_buildings[building]["properties"]["uprnreference"]
         for property in range(len(uprn_array)):
-            result.append(Property(uprn_array[property]['uprn']))
+            age = "buildingage_year" if list_of_buildings[building]["properties"]["buildingage_year"] else "buildingage_period"
+            new_prop = Property(uprn_array[property]['uprn'])
+            new_prop.connectivity =  list_of_buildings[building]["properties"]["connectivity"]
+            new_prop.age =  list_of_buildings[building]["properties"][age]
+            new_prop.material =  list_of_buildings[building]["properties"]["constructionmaterial"]
+            result.append(new_prop)
     return result
 
 
@@ -59,6 +64,14 @@ def test_returns_array_of_property_instances_from_os():
     props = get_props_from_os(array_of_buildings)
     assert type(props) is list
     assert type(props[0]) is Property
+
+def test_properties_have_desired_attributes():
+    array_of_buildings = os_dummy_data["features"]
+    props = get_props_from_os(array_of_buildings)
+    assert props[0].connectivity != ""
+    assert props[0].age != ""
+    assert props[0].material != ""
+
 
 
 
