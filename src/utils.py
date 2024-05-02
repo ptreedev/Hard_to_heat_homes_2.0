@@ -6,17 +6,6 @@ from src.epc_api import epc_api_call
 load_dotenv()
 TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
 
-def get_props(props):
-    result = []
-    for prop in props:
-        building = Property(prop['uprn'])
-        building.epc_rating = prop["current-energy-rating"]
-        building.epc_score = prop["current-energy-efficiency"]
-        building.address = f'{prop["address"]}, {prop["postcode"]}'
-        result.append(building)
-
-    return result
-
 def get_props_from_os(list_of_buildings):
     result = []
     for i in range(len(list_of_buildings)):

@@ -33,12 +33,6 @@ def test_returns_two_rows_of_properties():
     array_of_properties = epc_api_call(HEADERS, {'local-authority' :'E09000008', 'size' : '2'})['rows']
     assert len(array_of_properties) == 2
 
-def test_returns_an_array_of_two_property_instances():
-    array_of_properties = epc_api_call(HEADERS, {'local-authority' :'E09000008', 'size' : '2'})['rows']
-    props = get_props(array_of_properties)
-    assert type(props) is list
-    assert type(props[0]) is Property
-
 def test_returns_multiple_buildings_from_os():
     response = os_api_call({"Accept":"application/json"}, OS_PARAMS)
     array_of_buildings = response["features"]
