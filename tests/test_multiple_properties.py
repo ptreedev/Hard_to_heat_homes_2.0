@@ -28,6 +28,12 @@ OS_PARAMS = {
         "bbox": "-0.372438,51.405655,-0.371885,51.40600",
     }
 
+
+def get_props_from_os(list):
+    return []
+
+
+
 def test_returns_two_rows_of_properties():
     array_of_properties = epc_api_call(HEADERS, {'local-authority' :'E09000008', 'size' : '2'})['rows']
     assert len(array_of_properties) == 2
@@ -42,8 +48,11 @@ def test_returns_multiple_buildings_from_os():
     response = os_api_call({"Accept":"application/json"}, OS_PARAMS)
     array_of_buildings = response["features"]
     assert len(array_of_buildings) > 1
-    assert len(os_dummy_data) > 1
+    assert len(os_dummy_data["features"]) > 1
     
+def test_returns_array_of_property_instances_from_os():
+    array_of_buildings = os_dummy_data["features"]
+    assert type(get_props_from_os(array_of_buildings)) is list
 
 
 
