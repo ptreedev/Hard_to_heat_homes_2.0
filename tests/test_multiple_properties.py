@@ -67,3 +67,4 @@ def get_urpns_from_properties(properties):
 def test_getting_uprns_from_os_dummy_date_for_epc_call():
     assert type(get_urpns_from_properties(props)) is str
     assert "uprn" in get_urpns_from_properties(props)
+    assert "uprn=100061342030" in get_urpns_from_properties(props)
