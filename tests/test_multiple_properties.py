@@ -29,9 +29,12 @@ OS_PARAMS = {
     }
 
 
-def get_props_from_os(list):
-    return []
-
+def get_props_from_os(list_of_buildings):
+    result = []
+    for building in range(len(list_of_buildings)):
+        for property in range(len(list_of_buildings[building]["properties"]["uprnreference"])):
+            result.append(Property(list_of_buildings[building]["properties"]["uprnreference"][property]['uprn']))
+    return result
 
 
 def test_returns_two_rows_of_properties():
@@ -52,7 +55,12 @@ def test_returns_multiple_buildings_from_os():
     
 def test_returns_array_of_property_instances_from_os():
     array_of_buildings = os_dummy_data["features"]
-    assert type(get_props_from_os(array_of_buildings)) is list
+    props = get_props_from_os(array_of_buildings)
+    assert type(props) is list
+    assert type(props[0]) is Property
+
+
+
 
 
 
