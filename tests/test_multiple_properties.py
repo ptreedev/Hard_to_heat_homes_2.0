@@ -2,7 +2,7 @@ from src.epc_api import epc_api_call
 from src.property import Property
 from dotenv import load_dotenv
 import os 
-from app import get_props
+from src.utils import *
 from tests.test_os_api import os_api_call
 import json
 
@@ -27,21 +27,6 @@ OS_PARAMS = {
         "filter": "oslandusetiera LIKE 'Residential Accommodation' AND ismainbuilding=true",
         "bbox": "-0.372438,51.405655,-0.371885,51.40600",
     }
-
-
-def get_props_from_os(list_of_buildings):
-    result = []
-    for i in range(len(list_of_buildings)):
-        building = list_of_buildings[i]["properties"]
-        uprn_array = building["uprnreference"]
-        for j in range(len(uprn_array)):
-            age = "buildingage_year" if building["buildingage_year"] else "buildingage_period"
-            new_prop = Property(uprn_array[j]['uprn'])
-            new_prop.connectivity =  building["connectivity"]
-            new_prop.age =  building[age]
-            new_prop.material =  building["constructionmaterial"]
-            result.append(new_prop)
-    return result
 
 
 def test_returns_two_rows_of_properties():
