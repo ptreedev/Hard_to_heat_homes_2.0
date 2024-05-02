@@ -6,8 +6,8 @@ BASE_URL = 'https://epc.opendatacommunities.org/api/v1/domestic/search?'
 
 def epc_api_call(headers, params):
 
-    encoded_params = urlencode(params)
-    full_url = f'{BASE_URL}{encoded_params}'
+    # encoded_params = urlencode(params)
+    full_url = f'{BASE_URL}{params}'
 
     try:
         with urllib.request.urlopen(urllib.request.Request(full_url, headers=headers)) as response:

@@ -29,6 +29,8 @@ OS_PARAMS = {
     }
 
 
+
+
 def test_returns_two_rows_of_properties():
     array_of_properties = epc_api_call(HEADERS, {'local-authority' :'E09000008', 'size' : '2'})['rows']
     assert len(array_of_properties) == 2
@@ -39,15 +41,13 @@ def test_returns_multiple_buildings_from_os():
     assert len(array_of_buildings) > 1
     assert len(os_dummy_data["features"]) > 1
     
+array_of_buildings = os_dummy_data["features"]
+props = get_props_from_os(array_of_buildings)
 def test_returns_array_of_property_instances_from_os():
-    array_of_buildings = os_dummy_data["features"]
-    props = get_props_from_os(array_of_buildings)
     assert type(props) is list
     assert type(props[0]) is Property
 
 def test_properties_have_desired_attributes():
-    array_of_buildings = os_dummy_data["features"]
-    props = get_props_from_os(array_of_buildings)
     assert props[0].connectivity == "Semi-Connected"
     assert props[0].age == "1945-1959"
     assert props[0].material == "Brick Or Block Or Stone"
@@ -61,11 +61,12 @@ def test_properties_have_desired_attributes():
     assert props[0].epc_score != ''
     assert props[0].address != ''
 
+# def get_urpns_from_properties(properties):
+#     result = {}
+#     for prop in properties:
 
+#     return result
 
-
-
-
-
-
-    
+# def test_getting_uprns_from_os_dummy_date_for_epc_call():
+#     assert type(get_urpns_from_properties(props)) is dict
+#     assert len(get_urpns_from_properties(props)) > 0
