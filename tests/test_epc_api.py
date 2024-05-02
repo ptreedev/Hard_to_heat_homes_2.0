@@ -24,8 +24,8 @@ def test_not_200_response():
     assert epc_api_call({}, QUERY_PARAMS) == False
 
 
-# def test_result_is_JSON():
-#     assert response_data == epc_dummy_data
+def test_result_is_JSON():
+    assert response_data == epc_dummy_data
 
 
 def test_dummy_data_address():

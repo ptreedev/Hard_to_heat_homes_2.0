@@ -32,7 +32,7 @@ OS_PARAMS = {
 
 
 def test_returns_two_rows_of_properties():
-    array_of_properties = epc_api_call(HEADERS, {'local-authority' :'E09000008', 'size' : '2'})['rows']
+    array_of_properties = epc_api_call(HEADERS, 'local-authority=E09000008&size=2')['rows']
     assert len(array_of_properties) == 2
 
 def test_returns_multiple_buildings_from_os():

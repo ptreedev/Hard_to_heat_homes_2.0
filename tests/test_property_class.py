@@ -12,7 +12,7 @@ with open("src/os_dummy_data.json", "r") as data:
 
 
 TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
-QUERY_PARAMS = {"uprn": "200002791"}
+QUERY_PARAMS = "uprn=200002791"
 HEADERS = {"Accept": "application/json", "Authorization": f"Basic {TOKEN}"}
 
 epc_test_property = epc_api_call(HEADERS, QUERY_PARAMS)["rows"][0]
