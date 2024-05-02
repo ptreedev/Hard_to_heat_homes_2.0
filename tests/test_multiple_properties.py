@@ -32,8 +32,9 @@ OS_PARAMS = {
 def get_props_from_os(list_of_buildings):
     result = []
     for building in range(len(list_of_buildings)):
-        for property in range(len(list_of_buildings[building]["properties"]["uprnreference"])):
-            result.append(Property(list_of_buildings[building]["properties"]["uprnreference"][property]['uprn']))
+        uprn_array = list_of_buildings[building]["properties"]["uprnreference"]
+        for property in range(len(uprn_array)):
+            result.append(Property(uprn_array[property]['uprn']))
     return result
 
 
