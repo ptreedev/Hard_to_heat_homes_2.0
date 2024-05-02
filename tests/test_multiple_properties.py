@@ -62,7 +62,11 @@ def test_properties_have_desired_attributes():
     assert props[0].address != ''
 
 def get_urpns_from_properties(properties):
-    return 'uprn'
+    base_str = "uprn"
+    result = ""
+    for prop in properties:
+        result += f"{base_str}={prop.uprn}&"
+    return result
 
 def test_getting_uprns_from_os_dummy_date_for_epc_call():
     assert type(get_urpns_from_properties(props)) is str
