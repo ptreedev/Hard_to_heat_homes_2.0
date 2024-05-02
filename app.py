@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from src.property import Property
 from tests.test_os_api import os_api_call
-from src.utils import *
+from src.utils import get_props_from_os, get_attributes_from_epc
 load_dotenv()
 
 app = Flask(__name__)
@@ -26,6 +26,7 @@ def home():
         "bbox": "-0.372438,51.405655,-0.371885,51.40600",
     })["features"]
     props = get_props_from_os(list_of_buildings)
+    get_attributes_from_epc(props)
     return render_template("home.html", props=props)
 
 

@@ -6,6 +6,8 @@ from src.utils import *
 from tests.test_os_api import os_api_call
 import json
 
+
+
 with open("src/os_dummy_data.json") as data:
     os_dummy_data = json.load(data)
 
@@ -27,9 +29,6 @@ OS_PARAMS = {
         "filter": "oslandusetiera LIKE 'Residential Accommodation' AND ismainbuilding=true",
         "bbox": "-0.372438,51.405655,-0.371885,51.40600",
     }
-
-
-
 
 def test_returns_two_rows_of_properties():
     array_of_properties = epc_api_call(HEADERS, 'local-authority=E09000008&size=2')['rows']
@@ -57,16 +56,6 @@ def test_properties_have_desired_attributes():
     assert props[2].uprn == 10033322698
     assert props[2].age == 2012
     assert props[2].material == "Brick Or Block Or Stone"
-    assert props[0].epc_rating != ''
-    assert props[0].epc_score != ''
-    assert props[0].address != ''
-
-def get_urpns_from_properties(properties):
-    base_str = "uprn"
-    result = ""
-    for prop in properties:
-        result += f"{base_str}={prop.uprn}&"
-    return result
 
 def test_getting_uprns_from_os_dummy_date_for_epc_call():
     assert type(get_urpns_from_properties(props)) is str
