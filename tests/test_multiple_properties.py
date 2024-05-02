@@ -38,10 +38,12 @@ def test_returns_an_array_of_two_property_instances():
     assert type(props) is list
     assert type(props[0]) is Property
 
-def test_returns_two_buildings_from_os():
+def test_returns_multiple_buildings_from_os():
     response = os_api_call({"Accept":"application/json"}, OS_PARAMS)
     array_of_buildings = response["features"]
-    assert len(array_of_buildings) > 0
+    assert len(array_of_buildings) > 1
+    assert len(os_dummy_data) > 1
+    
 
 
 
