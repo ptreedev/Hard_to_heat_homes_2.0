@@ -10,6 +10,8 @@ class Property():
 
     def calculate_score(self):
         score = 0
+        if self.age == "Unknown":
+            self.age = 1
         age_is_int = type(self.age) is int
         if not age_is_int:
             self.age = int(self.age[-4:])

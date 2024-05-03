@@ -27,5 +27,18 @@ def test_property_age_before_1960_adds_point():
 def test_property_age_range_before_1960_adds_point():
     test_prop_2 = Property(1)
     test_prop_2.age = "1940-1950"
-
     assert test_prop_2.calculate_score() == 1
+
+def test_property_with_mixed_point_attributes():
+    test_prop_three = Property(3)
+    test_prop_three.material = 'Brick Or Block Or Stone'
+    test_prop_three.connectivity = "Standalone"
+    test_prop_three.age = "1959-1961"
+    test_prop_three.epc_rating = "E"
+    assert test_prop_three.calculate_score() == 2 
+
+# Need to double check about unknown adding a point vs no adding point
+def test_property_age_unknow():
+    test_prop_four = Property(4)
+    test_prop_four.age = "Unknown"
+    assert test_prop_four.calculate_score() == 1
