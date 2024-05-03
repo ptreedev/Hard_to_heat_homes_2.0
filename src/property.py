@@ -14,4 +14,6 @@ class Property():
             score += 1
         if self.material != "Brick Or Block Or Stone" and self.material != "":
             score += 1
+        if self.epc_rating > "C":
+            score += 1
         return score
