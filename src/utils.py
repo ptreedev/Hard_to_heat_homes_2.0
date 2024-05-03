@@ -1,11 +1,6 @@
 from src.property import Property
-import os
-from dotenv import load_dotenv
 from src.epc_api import epc_api_call
-
-load_dotenv()
-TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
-
+from src.variables import EPC_TOKEN
 
 def get_props_from_os(list_of_buildings):
     result = []
@@ -30,7 +25,7 @@ def get_props_from_os(list_of_buildings):
 def get_attributes_from_epc(properties):
     epc_params = get_urpns_from_properties(properties)
     epc_result_rows = epc_api_call(
-        {"Accept": "application/json", "Authorization": f"Basic {TOKEN}"}, epc_params
+        {"Accept": "application/json", "Authorization": f"Basic {EPC_TOKEN}"}, epc_params
     )["rows"]
     for i in range(len(properties)):
         prop = properties[i]

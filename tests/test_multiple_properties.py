@@ -1,30 +1,22 @@
 from src.epc_api import epc_api_call
 from src.property import Property
-from dotenv import load_dotenv
-import os 
 from src.utils import *
-from tests.test_os_api import os_api_call
+from src.os_api import os_api_call
 import json
-
+from src.variables import EPC_TOKEN, OS_KEY
 
 
 with open("src/os_dummy_data.json") as data:
     os_dummy_data = json.load(data)
 
-load_dotenv()
 
-TOKEN = os.getenv('EPC_ENCODED_API_TOKEN')
-
-
-BASE_URL = 'https://epc.opendatacommunities.org/api/v1/domestic/search?'
 HEADERS = {
         'Accept': 'application/json',
-        'Authorization': f'Basic {TOKEN}'
+        'Authorization': f'Basic {EPC_TOKEN}'
     }
 
-OS_API_KEY = os.getenv("OS_API_KEY")
 OS_PARAMS = {
-        "key": OS_API_KEY,
+        "key": OS_KEY,
         "limit": 2,
         "filter": "oslandusetiera LIKE 'Residential Accommodation' AND ismainbuilding=true",
         "bbox": "-0.372438,51.405655,-0.371885,51.40600",

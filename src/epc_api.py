@@ -1,13 +1,10 @@
 import json
 import urllib.request
-from urllib.parse import urlencode
-
-BASE_URL = 'https://epc.opendatacommunities.org/api/v1/domestic/search?'
+from src.variables import EPC_BASE_URL
 
 def epc_api_call(headers, params):
 
-    # encoded_params = urlencode(params)
-    full_url = f'{BASE_URL}{params}'
+    full_url = f'{EPC_BASE_URL}{params}'
 
     try:
         with urllib.request.urlopen(urllib.request.Request(full_url, headers=headers)) as response:

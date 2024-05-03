@@ -1,19 +1,15 @@
 from src.epc_dummy_data import epc_dummy_data
 from src.epc_api import epc_api_call
 import os
-from dotenv import load_dotenv
 from src.property import Property
 import json 
-
-load_dotenv()
+from src.variables import EPC_TOKEN
 
 with open("src/os_dummy_data.json", "r") as data:
     os_dummy_data = json.load(data)
 
-
-TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
 QUERY_PARAMS = "uprn=200002791"
-HEADERS = {"Accept": "application/json", "Authorization": f"Basic {TOKEN}"}
+HEADERS = {"Accept": "application/json", "Authorization": f"Basic {EPC_TOKEN}"}
 
 epc_test_property = epc_api_call(HEADERS, QUERY_PARAMS)["rows"][0]
 

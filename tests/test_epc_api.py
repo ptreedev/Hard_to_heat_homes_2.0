@@ -1,15 +1,9 @@
-import os
-from dotenv import load_dotenv
 from src.epc_dummy_data import epc_dummy_data
 from src.epc_api import epc_api_call
-
-load_dotenv()
-
-TOKEN = os.getenv("EPC_ENCODED_API_TOKEN")
+from src.variables import EPC_TOKEN
 
 QUERY_PARAMS = "uprn=200002791&uprn=100061342030"
-BASE_URL = "https://epc.opendatacommunities.org/api/v1/domestic/search?"
-HEADERS = {"Accept": "application/json", "Authorization": f"Basic {TOKEN}"}
+HEADERS = {"Accept": "application/json", "Authorization": f"Basic {EPC_TOKEN}"}
 response_data = epc_api_call(HEADERS, QUERY_PARAMS)
 
 def test_200_response():
