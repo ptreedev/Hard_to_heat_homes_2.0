@@ -7,3 +7,9 @@ class Property():
         self.age = ''
         self.connectivity = ''
         self.material = ''
+
+    def calculate_score(self):
+        score = 0
+        if self.connectivity == "Standalone":
+            score += 1
+        return score
