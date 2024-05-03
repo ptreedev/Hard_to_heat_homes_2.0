@@ -20,3 +20,8 @@ def test_property_epc_rating_below_c_adds_point():
 def test_property_age_before_1960_adds_point():
     test_prop.age = 1950
     assert test_prop.calculate_score() == 4
+
+def test_property_age_range_before_1960_adds_point():
+    test_prop_2 = Property(1)
+    test_prop_2.age = "1940-1950"
+    assert test_prop_2.calculate_score() == 1
