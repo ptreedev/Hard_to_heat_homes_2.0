@@ -1,5 +1,8 @@
 from src.property import Property
 
+# todo test when age range is unknown/null 
+# todo look into when material is mixed brick and also concrete
+
 test_prop = Property(1)
 
 def test_property_has_score():
@@ -24,4 +27,5 @@ def test_property_age_before_1960_adds_point():
 def test_property_age_range_before_1960_adds_point():
     test_prop_2 = Property(1)
     test_prop_2.age = "1940-1950"
+
     assert test_prop_2.calculate_score() == 1
