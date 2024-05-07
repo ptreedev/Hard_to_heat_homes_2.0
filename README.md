@@ -9,6 +9,7 @@ pip install -r requirements.txt
 ### Setting up the .env
 The .env file requires the following:
 EPC_ENCODED_API_TOKEN
+OS_API_KEY
 
 #### How to get your EPC_ENCODED_API_TOKEN
 
@@ -19,6 +20,12 @@ EPC_ENCODED_API_TOKEN
     - Username: your email you signed up with
     - Password: Your API key from EPC open data account
 - You should be able to find your EPC_ENCODED_API_TOKEN in your 'authorization'
+
+#### How to get your OS_API_KEY
+- you need to set up an account with OS datahub [sign up/in](https://osdatahub.os.uk/)
+- Use the data exploration licence Data Exploration Licence | OS Licensing [found at](https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence)
+- create a new project on datahub with OS Places API and OS NGD Features API 
+- copy the project key into .env  
 
 # To run app
 
