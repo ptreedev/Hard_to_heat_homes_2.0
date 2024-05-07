@@ -24,3 +24,6 @@ def test_returns_dict():
 def test_valid_uprn():
     assert os_places_api_call(100061342030) == os_places_dummy_data
 
+def test_invalid_uprn_format():
+    assert os_places_api_call("a") == False
+
