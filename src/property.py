@@ -12,6 +12,7 @@ class Property():
         self.age = 0
         self.connectivity = ''
         self.material = ''
+        self.score = 0
 
     def calculate_score(self):
         score = 0
@@ -24,6 +25,8 @@ class Property():
             score += 1
         if self.age <= MINIMUM_FAILING_AGE and self.age > 0:
             score += 1
+
+        self.score = score
         return score
     
     def handle_age_string(self):

@@ -14,6 +14,8 @@ def home():
     })["features"]
     props = get_props_from_os(list_of_buildings)
     get_attributes_from_epc(props)
+    for i in range(len(props)):
+        props[i].calculate_score()
     return render_template("home.html", props=props)
 
 
