@@ -1,11 +1,11 @@
-from src.epc_dummy_data import epc_dummy_data
+from tests.test_data.epc_dummy_data import epc_dummy_data
 from src.epc_api import epc_api_call
 import os
 from src.property import Property
 import json 
 from src.variables import EPC_TOKEN
 
-with open("src/os_dummy_data.json", "r") as data:
+with open("tests/test_data/os_dummy_data.json", "r") as data:
     os_dummy_data = json.load(data)
 
 QUERY_PARAMS = "uprn=200002791"

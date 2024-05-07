@@ -6,7 +6,7 @@ import json
 from src.variables import EPC_TOKEN, OS_KEY
 
 
-with open("src/os_dummy_data.json") as data:
+with open("tests/test_data/os_dummy_data.json") as data:
     os_dummy_data = json.load(data)
 
 
@@ -33,7 +33,7 @@ def test_returns_multiple_buildings_from_os():
     assert len(os_dummy_data["features"]) > 1
     
 array_of_buildings = os_dummy_data["features"]
-props = get_props_from_os(array_of_buildings)
+props = get_properties_from_os(array_of_buildings)
 def test_returns_array_of_property_instances_from_os():
     assert type(props) is list
     assert type(props[0]) is Property

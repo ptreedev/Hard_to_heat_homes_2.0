@@ -1,4 +1,4 @@
-from src.epc_dummy_data import epc_dummy_data
+from tests.test_data.epc_dummy_data import epc_dummy_data
 from src.epc_api import epc_api_call
 from src.variables import EPC_TOKEN
 

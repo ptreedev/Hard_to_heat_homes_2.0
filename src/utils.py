@@ -2,8 +2,8 @@ from src.property import Property
 from src.epc_api import epc_api_call
 from src.variables import EPC_TOKEN
 
-def get_props_from_os(list_of_buildings):
-    result = []
+def get_properties_from_os(list_of_buildings):
+    list_of_properties = []
     for i in range(len(list_of_buildings)):
         building = list_of_buildings[i]["properties"]
         uprn_array = building["uprnreference"]
@@ -17,9 +17,9 @@ def get_props_from_os(list_of_buildings):
             new_prop.connectivity = building["connectivity"]
             new_prop.age = building[age]
             new_prop.material = building["constructionmaterial"]
-            result.append(new_prop)
+            list_of_properties.append(new_prop)
 
-    return result
+    return list_of_properties
 
 
 def get_attributes_from_epc(properties):

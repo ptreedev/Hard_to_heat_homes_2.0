@@ -2,7 +2,7 @@ import json
 from src.os_api import os_api_call
 from src.variables import OS_KEY
 
-with open("src/os_dummy_data.json") as data:
+with open("tests/test_data/os_dummy_data.json") as data:
     os_dummy_data = json.load(data)
 
 HEADERS = {"Accept": "application/json"}
