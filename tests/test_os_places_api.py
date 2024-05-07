@@ -2,19 +2,11 @@ import json
 import urllib.request
 from src.variables import OS_KEY
 from src.property import Property
+from src.os_api import os_places_api_call
 
 with open("tests/test_data/os_places_dummy_data.json") as data:
     os_places_dummy_data = json.load(data)
 
-def os_places_api_call(uprn):
-    endpoint_url = f"https://api.os.uk/search/places/v1/uprn?uprn={uprn}&key={OS_KEY}"
-    try:
-        with urllib.request.urlopen(urllib.request.Request(endpoint_url, headers={"Accept" : "application/json"})) as response:
-            response_body= response.read()
-            return json.loads(response_body)
-
-    except Exception:
-        return False
 
 response = os_places_api_call(100061342030)
 

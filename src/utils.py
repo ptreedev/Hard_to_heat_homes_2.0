@@ -1,6 +1,7 @@
 from src.property import Property
 from src.epc_api import epc_api_call
 from src.variables import EPC_TOKEN
+from src.os_api import os_places_api_call
 
 def get_properties_from_os(list_of_buildings):
     list_of_properties = []
@@ -44,3 +45,13 @@ def get_urpns_from_properties(properties):
     for prop in properties:
         result += f"{base_str}={prop.uprn}&"
     return result
+
+def set_missing_addresses(property):
+    if not property.address:
+        response = os_places_api_call(property.uprn)
+        if response:
+            property.address = response['results'][0]['DPA']['ADDRESS']
+
+
+
+
