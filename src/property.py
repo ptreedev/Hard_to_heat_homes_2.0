@@ -21,7 +21,7 @@ class Property():
             score += 1
         if self.material not in WARM_MATERIALS and self.material != "":
             score += 1
-        if self.epc_rating > MINIMUM_EPC_RATING:
+        if self.epc_rating > MINIMUM_EPC_RATING or self.epc_rating == "":
             score += 1
         if self.age <= MINIMUM_FAILING_AGE and self.age > 0:
             score += 1
