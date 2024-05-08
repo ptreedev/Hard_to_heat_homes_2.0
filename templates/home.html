@@ -133,7 +133,7 @@
                 <th scope="row" class="govuk-table__header">{{ prop.uprn }}</th>
                 <th scope="row" class="govuk-table__header" id="{{prop.uprn}}">
                   {% if prop.address  == "" %}
-                    <a onclick="setAddress('{{prop.uprn}}','{{prop.uprn}}', '{{key}}')">Click for address</a>
+                    <a onclick="setAddress('{{prop.uprn}}','{{prop.uprn}}', '{{key}}')" style="color:blue; text-decoration: underline">Click for address</a>
                   {% else %}
                     {{ prop.address }}
                   {% endif %}
