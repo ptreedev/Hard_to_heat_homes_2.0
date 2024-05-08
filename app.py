@@ -15,7 +15,7 @@ def home():
     props = get_properties_from_os(list_of_buildings)
     get_attributes_from_epc(props)
     for i in range(len(props)):
-        set_missing_addresses(props[i])
+        # set_missing_addresses(props[i])
         props[i].calculate_score()
     return render_template("home.html", props=props, key=OS_KEY)
 
