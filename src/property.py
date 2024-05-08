@@ -13,6 +13,7 @@ class Property():
         self.connectivity = ''
         self.material = ''
         self.score = 0
+        self.void = False
 
     def calculate_score(self):
         score = 0
