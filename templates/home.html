@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" href="{{ url_for('static', filename= 'images/govuk-icon-180.png') }}">
   <link rel="manifest" href="{{ url_for('static', filename= 'manifest.json') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/govuk-frontend.min.css') }}">
+  <script src="{{url_for('static', filename='javascripts/fetch-address.js')}}" defer></script>
 </head>
 <!DOCTYPE html>
 <html lang="en" class="govuk-template app-html-class">
@@ -130,7 +131,13 @@
               {% for prop in props %}
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">{{ prop.uprn }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.address }}</th>    
+                <th scope="row" class="govuk-table__header" id="{{prop.uprn}}">
+                  {% if prop.address  == "" %}
+                    <a onclick="setAddress('{{prop.uprn}}','{{prop.uprn}}', '{{key}}')">Click for address</a>
+                  {% else %}
+                    {{ prop.address }}
+                  {% endif %}
+                  </th>    
                 <th scope="row" class="govuk-table__header">{{ prop.connectivity }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.age }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.material }}</th>

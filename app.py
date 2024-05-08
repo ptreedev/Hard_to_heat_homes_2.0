@@ -17,7 +17,7 @@ def home():
     for i in range(len(props)):
         set_missing_addresses(props[i])
         props[i].calculate_score()
-    return render_template("home.html", props=props)
+    return render_template("home.html", props=props, key=OS_KEY)
 
 
 # Define other routes as needed
