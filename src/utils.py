@@ -54,4 +54,21 @@ def set_missing_addresses(property):
 
 
 
+def setting_void_properties(list_of_properties):
+    for i in range(len(list_of_properties)):
+        if i %3 == 0:
+            list_of_properties[i].void = True
+
+
+def filter_for_void(list_of_properties):
+
+    void_properties = []
+
+    for i in range(len(list_of_properties)):
+        if list_of_properties[i].void == True:
+            void_properties.append(list_of_properties[i])
+
+    return void_properties
+
+
 
