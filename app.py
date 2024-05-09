@@ -18,7 +18,9 @@ def home():
     for i in range(len(props)):
         # set_missing_addresses(props[i])
         props[i].calculate_score()
-    return render_template("home.html", props=props, key=OS_KEY)
+
+    dummy_dict = {"uprn" : '1', "address" : "something", "void" : True}
+    return render_template("home.html", props=props, key=OS_KEY, dummy_dict=dummy_dict)
 
 
 # Define other routes as needed

@@ -13,6 +13,8 @@
   <link rel="manifest" href="{{ url_for('static', filename= 'manifest.json') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/govuk-frontend.min.css') }}">
   <script src="{{url_for('static', filename='javascripts/fetch-address.js')}}" defer></script>
+  <script src="{{url_for('static', filename='javascripts/filter-void-properties.js')}}" defer></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
 </head>
 <!DOCTYPE html>
 <html lang="en" class="govuk-template app-html-class">
@@ -113,7 +115,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">Hard to Heat Homes</h1>
-          <table class="govuk-table govuk-table--small-text-until-tablet">
+          <table class="govuk-table govuk-table--small-text-until-tablet" id="data">
             <caption class="govuk-table__caption govuk-table__caption--m">sum(like_it_hot)</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -216,7 +218,19 @@
     } from '/javascripts/govuk-frontend.min.js'
     initAll()
   </script>
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+
+  {% block scripts %}
+    <script>
+    $(document).ready(function (){
+      $("#data").DataTable();
+    })</script>
+  {% endblock %}
 </body>
+
+
 
 </html>
 
