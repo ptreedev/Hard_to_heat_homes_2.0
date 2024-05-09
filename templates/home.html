@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/govuk-frontend.min.css') }}">
   <script src="{{url_for('static', filename='javascripts/fetch-address.js')}}" defer></script>
   <script src="{{url_for('static', filename='javascripts/filter-void-properties.js')}}" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
 </head>
 <!DOCTYPE html>
@@ -144,7 +145,9 @@
   {% block scripts %}
     <script>
     $(document).ready(function (){
-      $("#data").DataTable();
+      $("#data").DataTable({
+        "paging": false
+      });
     })</script>
   {% endblock %}
 </body>
