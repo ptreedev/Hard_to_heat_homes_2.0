@@ -24,32 +24,7 @@
   <script>
     document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
   </script>
-  <form action="/form-handler" method="post" novalidate>
-    <div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies on [name of service]">
-      <div class="govuk-cookie-banner__message govuk-width-container">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-cookie-banner__heading govuk-heading-m">
-              Cookies on [name of service]
-            </h2>
-            <div class="govuk-cookie-banner__content">
-              <p class="govuk-body">We use some essential cookies to make this service work.</p>
-              <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
-            </div>
-          </div>
-        </div>
-        <div class="govuk-button-group">
-          <button value="yes" type="submit" name="cookies[analytics]" class="govuk-button" data-module="govuk-button">
-            Accept analytics cookies
-          </button>
-          <button value="no" type="submit" name="cookies[analytics]" class="govuk-button" data-module="govuk-button">
-            Reject analytics cookies
-          </button>
-          <a class="govuk-link" href="#">View cookies</a>
-        </div>
-      </div>
-    </div>
-  </form>
+
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
   <header class="govuk-header" data-module="govuk-header">
     <div class="govuk-header__container app-width-container">
@@ -71,45 +46,12 @@
       </div>
       <div class="govuk-header__content">
         <a href="#" class="govuk-header__link govuk-header__service-name">
-          Service name
+          Hard to Heat Homes
         </a>
-        <nav aria-label="Menu" class="govuk-header__navigation">
-          <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
-            Menu
-          </button>
-          <ul id="navigation" class="govuk-header__navigation-list">
-            <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-              <a class="govuk-header__link" href="#">
-                Navigation item 1
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-                Navigation item 2
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#">
-                Navigation item 3
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
   </header>
   <div class="govuk-width-container app-width-container">
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Alpha
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-        </span>
-      </p>
-    </div>
-    <a href="#" class="govuk-back-link">Back</a>
     <main class="govuk-main-wrapper app-main-class" id="main-content">  
 
       <div class="govuk-grid-row">
@@ -158,29 +100,6 @@
     <div class="govuk-width-container">
       <div class="govuk-footer__meta">
         <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <h2 class="govuk-visually-hidden">Support links</h2>
-          <ul class="govuk-footer__inline-list">
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="#">
-                Help
-              </a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="#">
-                Cookies
-              </a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="#">
-                Contact
-              </a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="#">
-                Terms and conditions
-              </a>
-            </li>
-          </ul>
           <svg
             aria-hidden="true"
             focusable="false"
