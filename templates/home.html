@@ -125,6 +125,7 @@
                 <th scope="col" class="govuk-table__header">EPC Rating</th>
                 <th scope="col" class="govuk-table__header">EPC Points</th>
                 <th scope="col" class="govuk-table__header">Score</th>
+                <th scope="col" class="govuk-table__header">Status</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -144,6 +145,7 @@
                 <th scope="row" class="govuk-table__header">{{ prop.epc_rating }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.epc_score }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.score }}</th>
+                <th scope="row" class="govuk-table__header">{{ "Void" if prop.void else "Occupied"}}</th>
               </tr>
               {% endfor %}
             </tbody>

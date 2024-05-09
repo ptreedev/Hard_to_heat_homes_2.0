@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from src.os_api import os_api_call
-from src.utils import get_properties_from_os, get_attributes_from_epc, set_missing_addresses
+from src.utils import get_properties_from_os, get_attributes_from_epc, set_missing_addresses, setting_void_properties
 from src.variables import OS_KEY
 
 app = Flask(__name__)
@@ -14,6 +14,7 @@ def home():
     })["features"]
     props = get_properties_from_os(list_of_buildings)
     get_attributes_from_epc(props)
+    setting_void_properties(props)
     for i in range(len(props)):
         # set_missing_addresses(props[i])
         props[i].calculate_score()
