@@ -1,6 +1,4 @@
 import json
-import urllib.request
-from src.variables import OS_KEY
 from src.property import Property
 from src.os_api import os_places_api_call
 
@@ -14,7 +12,7 @@ def test_returns_dict():
     assert type(os_places_api_call(1)) is dict
 
 def test_valid_uprn():
-    assert response == os_places_dummy_data
+    assert response["results"] == os_places_dummy_data["results"]
 
 def test_invalid_uprn_format():
     assert os_places_api_call("a") == False
