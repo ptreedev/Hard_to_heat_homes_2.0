@@ -10,8 +10,8 @@ phases:
       - chmod +x ./copilot-linux
   build:
     commands:
+      - pytest tests/
       - echo "Run your tests"
-      # - make test
   post_build:
     commands:
       - ls -l
