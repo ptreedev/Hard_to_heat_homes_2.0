@@ -11,10 +11,8 @@
                 <th scope="col" class="govuk-table__header">UPRN</th>
                 <th scope="col" class="govuk-table__header">Address</th> 
                 <th scope="col" class="govuk-table__header">Connectivity</th>
-                <th scope="col" class="govuk-table__header">Age</th>
-                <th scope="col" class="govuk-table__header">Material</th>
+                <th scope="col" class="govuk-table__header">Year</th>
                 <th scope="col" class="govuk-table__header">EPC Rating</th>
-                <th scope="col" class="govuk-table__header">EPC Points</th>
                 <th scope="col" class="govuk-table__header">Score</th>
                 <th scope="col" class="govuk-table__header">Status</th>
               </tr>
@@ -32,11 +30,9 @@
                   </th>    
                 <th scope="row" class="govuk-table__header">{{ prop.connectivity }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.age }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.material }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.epc_rating }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.epc_score }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.score }}</th>
-                <th scope="row" class="govuk-table__header">{{ "Void" if prop.void else "Occupied"}}</th>
+                <th scope="row" class="govuk-table__header">{{ "Empty" if prop.void else "Occupied"}}</th>
                 
               </tr>
               {% endfor %}

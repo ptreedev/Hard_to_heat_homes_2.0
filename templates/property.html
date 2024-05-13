@@ -12,13 +12,43 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Two-thirds column</h2>
-          <p class="govuk-body-l">This is a lead paragraph inside a two-thirds wide column</p>
-          <p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
+            <table class="govuk-table">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">UPRN</th>
+                        <td class="govuk-table__cell">{{property.uprn}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Connectivity</th>
+                    <td class="govuk-table__cell">{{property.connectivity}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Building Materials</th>
+                    <td class="govuk-table__cell">{{property.material}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Year Of Construction</th>
+                    <td class="govuk-table__cell">{{property.age}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">EPC Rating</th>
+                    <td class="govuk-table__cell">{{property.epc_rating}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">EPC Score</th>
+                    <td class="govuk-table__cell">{{property.epc_score}}</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">EPC Score</th>
+                    <td class="govuk-table__cell">{{property.score}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              
         </div>
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-m">One-third column</h3>
-          <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+          <h3 class="govuk-heading-m">Map Pending</h3>
+          <p class="govuk-body">A picture of a map</p>
         </div>
       </div>
     </main>
