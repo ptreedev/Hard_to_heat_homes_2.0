@@ -74,9 +74,9 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              {% for prop in props %}
+              {% for prop in properties %}
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">{{ prop.uprn }}</th>
+                <th scope="row" class="govuk-table__header"><a href="{{url_for('property', uprn=prop.uprn)}}">{{ prop.uprn }}</a></th>
                 <th scope="row" class="govuk-table__header" id="{{prop.uprn}}">
                   {% if prop.address  == "" %}
                     <a onclick="setAddress('{{prop.uprn}}','{{prop.uprn}}', '{{key}}')" style="color:blue; text-decoration: underline">Click for address</a>
@@ -91,6 +91,7 @@
                 <th scope="row" class="govuk-table__header">{{ prop.epc_score }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.score }}</th>
                 <th scope="row" class="govuk-table__header">{{ "Void" if prop.void else "Occupied"}}</th>
+                
               </tr>
               {% endfor %}
             </tbody>
