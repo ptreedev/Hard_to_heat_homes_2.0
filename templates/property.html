@@ -6,11 +6,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 id="{{property.uprn}}" class="govuk-heading-xl">
-            {% if property.address  == "" %}
-                <span onclick="setAddress('{{property.uprn}}','{{property.uprn}}', '{{key}}')" style="color:blue; text-decoration: underline">Click for address<span>
-            {% else %}
                 {{ property.address }}
-            {% endif %}
           </h1>
         </div>
       </div>
@@ -27,5 +23,16 @@
       </div>
     </main>
   </div>
+
+  
+  {% block scripts %}
+  <script>
+    window.onload = function() {
+        if ('{{property.address}}' == "") {
+            setAddress({{property.uprn}}, {{property.uprn}}, '{{key}}');
+        }
+    }
+  </script>
+  {% endblock %}
   
 {% endblock %}
