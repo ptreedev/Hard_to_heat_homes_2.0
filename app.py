@@ -30,7 +30,7 @@ def property(uprn):
             prop = property 
             # handle error 404
 
-    return render_template("property.html", property=prop)
+    return render_template("property.html", property=prop, key=OS_KEY)
 
 
 

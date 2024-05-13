@@ -18,7 +18,6 @@ async function setAddress(id, uprn, key){
   
     const element = document.getElementById(id)
     address = await getAddressFromPlacesAPI(uprn, key)
-    console.log(key, '>>>>>>>>>>')
     element.innerHTML = await address
 
 }
