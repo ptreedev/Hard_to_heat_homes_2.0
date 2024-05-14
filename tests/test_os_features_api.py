@@ -49,12 +49,14 @@ def test_get_uprns_from_one_building():
 def test_accessing_desired_response_data_for_multiple_buildings():
     for i in range(len(response["features"])):
         response_building = response["features"][i]["properties"]
+        response_building_coordinates = response["features"][i]["geometry"]["coordinates"]
         dummy_data_building = os_dummy_data["features"][i]["properties"]
         
         year = "buildingage_year" if response_building["buildingage_year"] else "buildingage_period"
         assert response_building[year] == dummy_data_building[year]
         assert response_building["connectivity"] == dummy_data_building["connectivity"]
         assert response_building["constructionmaterial"] == dummy_data_building["constructionmaterial"]
+        assert response_building_coordinates[0] == os_dummy_data["features"][i]["geometry"]["coordinates"][0]
         for j in range(len(response_building["uprnreference"])):
             assert (
                 response_building["uprnreference"][j]["uprn"]

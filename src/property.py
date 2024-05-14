@@ -14,6 +14,8 @@ class Property():
         self.material = ''
         self.score = 0
         self.void = False
+        self.long = 0
+        self.lat = 0
 
     def calculate_score(self):
         score = 0
