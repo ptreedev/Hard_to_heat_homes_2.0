@@ -32,9 +32,9 @@
                 <th scope="row" class="govuk-table__header">{{ prop.epc_rating }}</th>
                 <th scope="row" class="govuk-table__header">{{ prop.score }}</th>
                 <th scope="row" class="govuk-table__header">{{ "Empty" if prop.void else "Occupied"}}</th>
-                <th score="row" class="govuk-table__header" ><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                <a href="{{url_for('property', uprn=prop.uprn)}}" style="color:black; text-decoration: none">Details</a>
-                </button>
+                <th score="row" class="govuk-table__header" >
+                <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="{{url_for('property', uprn=prop.uprn)}}" style="color:black; text-decoration: none">Details</a>
+                
                 </th>     
                </tr>
               {% endfor %}
