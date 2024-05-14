@@ -12,7 +12,7 @@
                 <th scope="col" class="govuk-table__header no-sort">Connectivity</th>
                 <th scope="col" class="govuk-table__header no-sort">Year</th>
                 <th scope="col" class="govuk-table__header no-sort">EPC Rating</th>
-                <th scope="col" class="govuk-table__header">Score</th>
+                <th scope="col" class="govuk-table__header" title="Low 0-4 High">Hard To Heat Score: <br>(easy) 0  - 4 (hard)</th>
                 <th scope="col" class="govuk-table__header no-sort">Status</th>
                 <th scope="col" class="govuk-table__header no-sort"></th> 
               </tr>
@@ -20,21 +20,21 @@
             <tbody class="govuk-table__body">
               {% for prop in properties %}
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" id="{{prop.uprn}}">
+                <td scope="row" class="govuk-table__cell" id="{{prop.uprn}}">
                   {% if prop.address  == "" %}
                     <a onclick="setAddress('{{prop.uprn}}','{{prop.uprn}}', '{{key}}')" style="color:blue; text-decoration: underline">Click for address</a>
                   {% else %}
                     {{ prop.address }}
                   {% endif %}
-                  </th>    
-                <th scope="row" class="govuk-table__header">{{ prop.connectivity }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.age }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.epc_rating }}</th>
-                <th scope="row" class="govuk-table__header">{{ prop.score }}</th>
-                <th scope="row" class="govuk-table__header">{{ "Empty" if prop.void else "Occupied"}}</th>
-                <th score="row" class="govuk-table__header" >
+                  </td>    
+                <td scope="row" class="govuk-table__cell">{{ prop.connectivity }}</td>
+                <td scope="row" class="govuk-table__cell">{{ prop.age }}</td>
+                <td scope="row" class="govuk-table__cell" style="text-align: center;">{{ prop.epc_rating }}</td>
+                <td scope="row" class="govuk-table__cell">{{ prop.score }}</td>
+                <td scope="row" class="govuk-table__cell">{{ "Empty" if prop.void else "Occupied"}}</td>
+                <td score="row" class="govuk-table__cell" >
                   <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="{{url_for('property', uprn=prop.uprn)}}" style="color:black; text-decoration: none">Details</a>
-                </th>     
+                </td>     
                </tr>
               {% endfor %}
             </tbody>
@@ -47,7 +47,8 @@
             <script defer>
             $(document).ready(function (){
               $("#data").DataTable({
-                "paging": false,
+                "paging": true,
+                pageLength: 25,
                 "order": [],
                 "ordering": true,
                 columnDefs: [{
