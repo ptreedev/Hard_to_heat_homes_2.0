@@ -35,11 +35,11 @@
                     <td class="govuk-table__cell">{{property.epc_rating}}</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">EPC Score</th>
+                    <th scope="row" class="govuk-table__header">EPC Points</th>
                     <td class="govuk-table__cell">{{property.epc_score}}</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">EPC Score</th>
+                    <th scope="row" class="govuk-table__header">Hard To Heat Score</th>
                     <td class="govuk-table__cell">{{property.score}}</td>
                   </tr>
                 </tbody>
@@ -47,8 +47,7 @@
               
         </div>
         <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-m">Map Pending</h3>
-          <p class="govuk-body">A picture of a map</p>
+          <div id="map" style="height: 300px; margin-top: 2rem"></div>
         </div>
       </div>
     </main>
@@ -56,12 +55,24 @@
 
   
   {% block scripts %}
-  <script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+  <script defer>
     window.onload = function() {
         if ('{{property.address}}' == "") {
             setAddress({{property.uprn}}, {{property.uprn}}, '{{key}}');
         }
+
+        const map = L.map('map').setView([51.505, -0.09], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
     }
+    
+    
   </script>
   {% endblock %}
   
