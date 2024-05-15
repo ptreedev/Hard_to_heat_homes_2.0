@@ -30,7 +30,7 @@
                 <td scope="row" class="govuk-table__cell">{{ prop.connectivity }}</td>
                 <td scope="row" class="govuk-table__cell">{{ prop.age }}</td>
                 <td scope="row" class="govuk-table__cell" style="text-align: center;">{{ prop.epc_rating }}</td>
-                <td scope="row" class="govuk-table__cell">{{ prop.score }}</td>
+                <td scope="row" class="govuk-table__cell" style="text-align: center;">{{ prop.score }}</td>
                 <td scope="row" class="govuk-table__cell">{{ "Empty" if prop.void else "Occupied"}}</td>
                 <td score="row" class="govuk-table__cell" >
                   <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="{{url_for('property', uprn=prop.uprn)}}" style="color:black; text-decoration: none">Details</a>
