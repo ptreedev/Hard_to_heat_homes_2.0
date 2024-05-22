@@ -1,0 +1,353 @@
+{
+    "type": "FeatureCollection",
+    "links": [
+        {
+            "href": "https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-building-2/items?limit=3&bbox=-0.372438,51.405655,-0.371885,51.40600&filter=oslandusetiera%20LIKE%20%27Residential%20Accommodation%27%20AND%20ismainbuilding%3Dtrue&key=eQZohxBxjpHhrXsRrcVCxu5TI1XFObsw",
+            "rel": "self",
+            "type": "application/geo+json",
+            "title": "All features from the 'Building v2' collection within bounding box: -0.372438,51.405655,-0.371885,51.40600"
+        },
+        {
+            "href": "https://api.os.uk/features/ngd/ofa/v1/collections/bld-fts-building-2/items?offset=3&limit=3&bbox=-0.372438,51.405655,-0.371885,51.40600&filter=oslandusetiera%20LIKE%20%27Residential%20Accommodation%27%20AND%20ismainbuilding%3Dtrue&key=eQZohxBxjpHhrXsRrcVCxu5TI1XFObsw",
+            "rel": "next",
+            "type": "application/geo+json",
+            "title": "Next page"
+        }
+    ],
+    "timeStamp": "2024-05-01T11:36:43.405426375Z",
+    "numberReturned": 3,
+    "features": [
+        {
+            "id": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.3723468,
+                            51.4059309
+                        ],
+                        [
+                            -0.3722083,
+                            51.4059631
+                        ],
+                        [
+                            -0.3721717,
+                            51.4059006
+                        ],
+                        [
+                            -0.3723087,
+                            51.4058687
+                        ],
+                        [
+                            -0.3723468,
+                            51.4059309
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "osid": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+                "theme": "Buildings",
+                "isinsite": true,
+                "changetype": "New",
+                "buildinguse": "Residential Accommodation",
+                "description": "Multiple Residential Accommodation",
+                "versiondate": "2024-03-15",
+                "connectivity": "Semi-Connected",
+                "sitereference": [
+                    {
+                        "siteid": "f97ea880-1b66-4775-ba3e-bbf389366108",
+                        "buildingid": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "uprnreference": [
+                    {
+                        "uprn": 100061342030,
+                        "buildingid": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+                        "buildingversiondate": "2024-03-15"
+                    },
+                    {
+                        "uprn": 100061342031,
+                        "buildingid": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "ismainbuilding": true,
+                "oslandusetiera": "Residential Accommodation",
+                "primarysite_id": "f97ea880-1b66-4775-ba3e-bbf389366108",
+                "mainbuilding_id": null,
+                "basementpresence": "Not Present",
+                "buildingage_year": null,
+                "geometry_area_m2": 75.694,
+                "buildingpartcount": 1,
+                "connectivitycount": 1,
+                "addresscount_other": 0,
+                "addresscount_total": 2,
+                "buildingage_period": "1945-1959",
+                "buildingage_source": "Verisk",
+                "containingsitecount": 1,
+                "geometry_updatedate": "2024-01-31",
+                "constructionmaterial": "Brick Or Block Or Stone",
+                "buildingpartreference": [
+                    {
+                        "buildingid": "51f49b14-8ead-4bc2-b06a-8c353e106188",
+                        "buildingpartid": "c513a530-a595-4776-830e-05318a22c606",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "buildingage_updatedate": "2024-03-13",
+                "buildinguse_updatedate": "2024-01-31",
+                "description_updatedate": "2024-01-31",
+                "versionavailabletodate": null,
+                "addresscount_commercial": 0,
+                "basementpresence_source": "Verisk",
+                "connectivity_updatedate": "2024-01-31",
+                "mainbuilding_updatedate": "2024-01-31",
+                "addresscount_residential": 2,
+                "buildingage_evidencedate": "2017-01-01",
+                "versionavailablefromdate": "2024-03-16T00:00:00Z",
+                "buildingage_capturemethod": "Remote Sensing Survey",
+                "basementpresence_updatedate": "2024-03-09",
+                "constructionmaterial_source": "Verisk",
+                "basementpresence_evidencedate": "2022-12-23",
+                "basementpresence_capturemethod": "Automated Process",
+                "basementpresence_selfcontained": "Not Present",
+                "constructionmaterial_updatedate": "2024-03-13",
+                "buildingage_thirdpartyprovenance": "Remote Sensed Manual Imagery Interpretation",
+                "constructionmaterial_evidencedate": "2017-01-01",
+                "constructionmaterial_capturemethod": "Automated Process",
+                "basementpresence_thirdpartyprovenance": "Infill Modelling",
+                "constructionmaterial_thirdpartyprovenance": "Infill Modelling"
+            }
+        },
+        {
+            "id": "626f25cb-23c9-4f46-981e-f52427258286",
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.3720506,
+                            51.4058056
+                        ],
+                        [
+                            -0.3719749,
+                            51.4058251
+                        ],
+                        [
+                            -0.3719689,
+                            51.405816
+                        ],
+                        [
+                            -0.3719681,
+                            51.4058148
+                        ],
+                        [
+                            -0.3719134,
+                            51.4057314
+                        ],
+                        [
+                            -0.371989,
+                            51.405712
+                        ],
+                        [
+                            -0.3720395,
+                            51.4057887
+                        ],
+                        [
+                            -0.3720448,
+                            51.4057968
+                        ],
+                        [
+                            -0.3720506,
+                            51.4058056
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "osid": "626f25cb-23c9-4f46-981e-f52427258286",
+                "theme": "Buildings",
+                "isinsite": true,
+                "changetype": "New",
+                "buildinguse": "Residential Accommodation",
+                "description": "Mid-Terrace House",
+                "versiondate": "2024-03-15",
+                "connectivity": "Multi-Connected",
+                "sitereference": [
+                    {
+                        "siteid": "426c1a7d-5c6c-4d39-adc9-a2ac438bea10",
+                        "buildingid": "626f25cb-23c9-4f46-981e-f52427258286",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "uprnreference": [
+                    {
+                        "uprn": 10033322698,
+                        "buildingid": "626f25cb-23c9-4f46-981e-f52427258286",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "ismainbuilding": true,
+                "oslandusetiera": "Residential Accommodation",
+                "primarysite_id": "426c1a7d-5c6c-4d39-adc9-a2ac438bea10",
+                "mainbuilding_id": null,
+                "basementpresence": "Not Present",
+                "buildingage_year": 2012,
+                "geometry_area_m2": 64.078,
+                "buildingpartcount": 1,
+                "connectivitycount": 2,
+                "addresscount_other": 0,
+                "addresscount_total": 1,
+                "buildingage_period": "2010-2019",
+                "buildingage_source": "Verisk",
+                "containingsitecount": 1,
+                "geometry_updatedate": "2024-01-31",
+                "constructionmaterial": "Brick Or Block Or Stone",
+                "buildingpartreference": [
+                    {
+                        "buildingid": "626f25cb-23c9-4f46-981e-f52427258286",
+                        "buildingpartid": "9155d781-c36d-4f09-bd3b-ecbda609820b",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "buildingage_updatedate": "2024-03-13",
+                "buildinguse_updatedate": "2024-01-31",
+                "description_updatedate": "2024-01-31",
+                "versionavailabletodate": null,
+                "addresscount_commercial": 0,
+                "basementpresence_source": "Verisk",
+                "connectivity_updatedate": "2024-01-31",
+                "mainbuilding_updatedate": "2024-01-31",
+                "addresscount_residential": 1,
+                "buildingage_evidencedate": "2012-01-25",
+                "versionavailablefromdate": "2024-03-16T00:00:00Z",
+                "buildingage_capturemethod": "Third Party Unknown",
+                "basementpresence_updatedate": "2024-03-09",
+                "constructionmaterial_source": "Verisk",
+                "basementpresence_evidencedate": "2022-12-23",
+                "basementpresence_capturemethod": "Automated Process",
+                "basementpresence_selfcontained": "Not Present",
+                "constructionmaterial_updatedate": "2024-03-13",
+                "buildingage_thirdpartyprovenance": "Domestic Energy Performance Certificate (England And Wales)",
+                "constructionmaterial_evidencedate": "2023-01-23",
+                "constructionmaterial_capturemethod": "Automated Process",
+                "basementpresence_thirdpartyprovenance": "Infill Modelling",
+                "constructionmaterial_thirdpartyprovenance": "Infill Modelling"
+            }
+        },
+        {
+            "id": "75fe3bad-a308-4b34-9266-427dc7ee6562",
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.3720936,
+                            51.4057748
+                        ],
+                        [
+                            -0.3720395,
+                            51.4057887
+                        ],
+                        [
+                            -0.371989,
+                            51.405712
+                        ],
+                        [
+                            -0.3719731,
+                            51.4056877
+                        ],
+                        [
+                            -0.3720272,
+                            51.4056738
+                        ],
+                        [
+                            -0.3720432,
+                            51.4056981
+                        ],
+                        [
+                            -0.3720936,
+                            51.4057748
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "osid": "75fe3bad-a308-4b34-9266-427dc7ee6562",
+                "theme": "Buildings",
+                "isinsite": true,
+                "changetype": "New",
+                "buildinguse": "Residential Accommodation",
+                "description": "Mid-Terrace House",
+                "versiondate": "2024-03-15",
+                "connectivity": "Multi-Connected",
+                "sitereference": [
+                    {
+                        "siteid": "cb6a9c1c-e7d7-434f-88eb-99ea6c166219",
+                        "buildingid": "75fe3bad-a308-4b34-9266-427dc7ee6562",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "uprnreference": [
+                    {
+                        "uprn": 10033322697,
+                        "buildingid": "75fe3bad-a308-4b34-9266-427dc7ee6562",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "ismainbuilding": true,
+                "oslandusetiera": "Residential Accommodation",
+                "primarysite_id": "cb6a9c1c-e7d7-434f-88eb-99ea6c166219",
+                "mainbuilding_id": null,
+                "basementpresence": "Not Present",
+                "buildingage_year": 2012,
+                "geometry_area_m2": 49.451,
+                "buildingpartcount": 1,
+                "connectivitycount": 2,
+                "addresscount_other": 0,
+                "addresscount_total": 1,
+                "buildingage_period": "2010-2019",
+                "buildingage_source": "Verisk",
+                "containingsitecount": 1,
+                "geometry_updatedate": "2024-01-31",
+                "constructionmaterial": "Brick Or Block Or Stone",
+                "buildingpartreference": [
+                    {
+                        "buildingid": "75fe3bad-a308-4b34-9266-427dc7ee6562",
+                        "buildingpartid": "69eb4386-a41f-40f6-9f72-59ae22a6753b",
+                        "buildingversiondate": "2024-03-15"
+                    }
+                ],
+                "buildingage_updatedate": "2024-03-13",
+                "buildinguse_updatedate": "2024-01-31",
+                "description_updatedate": "2024-01-31",
+                "versionavailabletodate": null,
+                "addresscount_commercial": 0,
+                "basementpresence_source": "Verisk",
+                "connectivity_updatedate": "2024-01-31",
+                "mainbuilding_updatedate": "2024-01-31",
+                "addresscount_residential": 1,
+                "buildingage_evidencedate": "2012-06-28",
+                "versionavailablefromdate": "2024-03-16T00:00:00Z",
+                "buildingage_capturemethod": "Third Party Unknown",
+                "basementpresence_updatedate": "2024-03-09",
+                "constructionmaterial_source": "Verisk",
+                "basementpresence_evidencedate": "2022-12-23",
+                "basementpresence_capturemethod": "Automated Process",
+                "basementpresence_selfcontained": "Not Present",
+                "constructionmaterial_updatedate": "2024-03-13",
+                "buildingage_thirdpartyprovenance": "HMLR (Price Paid)",
+                "constructionmaterial_evidencedate": "2022-06-02",
+                "constructionmaterial_capturemethod": "Third Party Unknown",
+                "basementpresence_thirdpartyprovenance": "Infill Modelling",
+                "constructionmaterial_thirdpartyprovenance": "Domestic Energy Performance Certificate (England And Wales)"
+            }
+        }
+    ]
+}
