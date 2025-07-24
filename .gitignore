@@ -1,9 +1,11 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
 .env
 extensions/
 bin/
 lib/
 cli/
 .pytest_cache/
+__pycache__/
 node_modules/
 include/
 argv.json

@@ -22,5 +22,6 @@ def test_access_property_address():
 
 def test_assign_property_address_from_uprn():
     test_property = Property(100061342030)
+    print(test_property, "<--- test-property")
     test_property.address = response["results"][0]['DPA']['ADDRESS']
     assert test_property.address == "13A, WILTON GARDENS, WEST MOLESEY, KT8 1QP"
