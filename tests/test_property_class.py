@@ -1,9 +1,9 @@
 from tests.test_data.epc_dummy_data import epc_dummy_data
 from src.epc_api import epc_api_call
-import os
 from src.property import Property
 import json 
 from src.variables import EPC_TOKEN
+import pytest
 
 with open("tests/test_data/os_dummy_data.json", "r") as data:
     os_dummy_data = json.load(data)
@@ -11,8 +11,13 @@ with open("tests/test_data/os_dummy_data.json", "r") as data:
 QUERY_PARAMS = "uprn=200002791"
 HEADERS = {"Accept": "application/json", "Authorization": f"Basic {EPC_TOKEN}"}
 
-epc_test_property = epc_api_call(HEADERS, QUERY_PARAMS)["rows"][0]
-
+@pytest.fixture
+def mock_api_call(mocker):
+    mock_get = mocker.patch("src.epc_api.requests.get")
+    mock_response = mock_get.return_value
+    mock_response.json.return_value = epc_dummy_data
+    result = epc_api_call(HEADERS, QUERY_PARAMS)
+    return result
 
 def test_property_has_uprn():
     dummy_property = Property("200002791")
@@ -24,8 +29,8 @@ def test_property_has_uprn_from_dummy_data():
     assert dummy_property.uprn == "200002791"
 
 
-def test_property_has_uprn_from_api_call():
-    dummy_property = Property(epc_test_property["uprn"])
+def test_property_has_uprn_from_mock_api_call(mock_api_call):
+    dummy_property = Property(mock_api_call["rows"][0]["uprn"])
     assert dummy_property.uprn == "200002791"
 
 
@@ -35,9 +40,9 @@ def test_property_has_EPC_rating():
     assert dummy_property.epc_rating == "D"
 
 
-def test_property_has_correct_attributes_from_api_call():
+def test_property_has_correct_attributes_from_mock_api_call(mock_api_call):
     dummy_property = Property(
-        epc_test_property["uprn"]
+        mock_api_call["rows"][0]["uprn"]
     )
     dummy_property.epc_rating = "D"
     dummy_property.uprn = "200002791"
