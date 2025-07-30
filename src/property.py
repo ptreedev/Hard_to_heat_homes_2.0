@@ -16,6 +16,10 @@ class Property():
         self.void = False
         self.long = 0
         self.lat = 0
+        self.roof_shape = "Mixed"
+        self.roof_pitched_area = 0
+        self.roof_southeast_area = 0
+        self.roof_solar_panel_presence = ''
 
     def calculate_score(self):
         score = 0
