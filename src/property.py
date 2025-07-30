@@ -20,6 +20,7 @@ class Property():
         self.roof_pitched_area = 0
         self.roof_southeast_area = 0
         self.roof_solar_panel_presence = ''
+        self.roof_material = ''
 
     def calculate_score(self):
         score = 0
