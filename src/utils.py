@@ -21,6 +21,11 @@ def get_properties_from_os(list_of_buildings):
             new_prop.material = building["constructionmaterial"]
             new_prop.long = coordinates[0]
             new_prop.lat = coordinates[1]
+            new_prop.roof_shape = building["roofshapeaspect_shape"]
+            new_prop.roof_pitched_area = building['roofshapeaspect_areapitched_m2']
+            new_prop.roof_southeast_area = building["roofshapeaspect_areafacingsoutheast_m2"]
+            new_prop.roof_solar_panel_presence = building["roofmaterial_solarpanelpresence"]
+            new_prop.roof_material = building["roofmaterial_primarymaterial"]
             list_of_properties.append(new_prop)
 
     return list_of_properties
