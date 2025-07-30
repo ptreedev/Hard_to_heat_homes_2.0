@@ -16,6 +16,7 @@ class Property():
         self.void = False
         self.long = 0
         self.lat = 0
+        self.building_id = ''
 
     def calculate_score(self):
         score = 0
