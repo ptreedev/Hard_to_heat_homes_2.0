@@ -12,3 +12,4 @@ argv.json
 package-lock.json
 package.json
 pyvenv.cfg
+data/bdline_gpkg_gb
