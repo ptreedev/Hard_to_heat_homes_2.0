@@ -17,7 +17,7 @@ class Property():
         self.long = 0
         self.lat = 0
         self.building_id = ''
-        self.roof_shape = "Mixed"
+        self.roof_shape = ""
         self.roof_pitched_area = 0
         self.roof_southeast_area = 0
         self.roof_solar_panel_presence = ''
