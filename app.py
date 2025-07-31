@@ -5,11 +5,14 @@ from src.variables import OS_KEY
 
 app = Flask(__name__)
 
-list_of_buildings = os_api_call({"Accept":"application/json"}, {
-    "key": OS_KEY,
-    "filter": "oslandusetiera LIKE 'Residential Accommodation' AND ismainbuilding=true",
-    "bbox": "-0.373641,51.399234,-0.372031,51.399977",
-})["features"]
+HEADERS = {"Accept": "application/json"}
+PARAMS = {
+        "key": OS_KEY,
+        "filter": "buildinguse_oslandusetiera = 'Residential Accommodation' AND mainbuildingid_ismainbuilding = 'Yes'",
+        "bbox": "-0.373641,51.399234,-0.372031,51.399977",
+         }
+list_of_buildings = os_api_call(HEADERS, PARAMS)["features"]
+
 properties = get_properties_from_os(list_of_buildings)
 get_attributes_from_epc(properties)
 setting_void_properties(properties)
