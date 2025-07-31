@@ -19,6 +19,3 @@ def test_filters_for_void_properties():
     assert void_properties[0].void == True
     assert len(void_properties) == 2
     
-# def test_property_has_void_status_true():
-#     test_prop_two = Property(2)
-#     assert test_prop
