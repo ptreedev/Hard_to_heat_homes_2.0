@@ -1,4 +1,4 @@
-from src.bbox import get_bbox_for_council_code
+from src.council_data_utils import get_bbox_for_council_code
 
 def test_get_bbox_for_council_returns_correct_for_valid_council():
     council_code = "E07000207"
