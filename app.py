@@ -14,7 +14,7 @@ PARAMS = {
 list_of_buildings = os_api_call(HEADERS, PARAMS)["features"]
 
 properties = get_properties_from_os(list_of_buildings)
-get_attributes_from_epc(properties)
+
 setting_void_properties(properties)
 for i in range(len(properties)):
     # set_missing_addresses(properties[i])
@@ -27,14 +27,15 @@ def home():
 
 @app.route("/<int:uprn>")
 def property(uprn):
+    
     prop = None
     for property in properties:
         if property.uprn == uprn:
             prop = property 
-            # handle error 404
-
+            break
+    get_attributes_from_epc(prop, uprn)
+        
     return render_template("property.html", property=prop, key=OS_KEY)
-
 
 
 

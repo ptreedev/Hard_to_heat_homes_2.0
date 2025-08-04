@@ -32,28 +32,19 @@ def get_properties_from_os(list_of_buildings):
     return list_of_properties
 
 
-def get_attributes_from_epc(properties):
-    epc_params = get_urpns_from_properties(properties)
-    epc_result_rows = epc_api_call(
+def get_attributes_from_epc(prop, uprn):
+    epc_params = format_urpn_from_property(uprn)
+    epc_result = epc_api_call(
         {"Accept": "application/json", "Authorization": f"Basic {EPC_TOKEN}"}, epc_params
-    )["rows"]
-    for i in range(len(properties)):
-        prop = properties[i]
-        for j in range(len(epc_result_rows)):
-            if str(prop.uprn) == epc_result_rows[j]["uprn"]:
-                prop.epc_rating = epc_result_rows[j]["current-energy-rating"]
-                prop.epc_score = epc_result_rows[j]["current-energy-efficiency"]
-                prop.address = (
-                    f'{epc_result_rows[j]["address"]}, {epc_result_rows[j]["postcode"]}'
-                )
-                
+    )
+    if epc_result:
+        epc_data_by_uprn = {row["uprn"]: row for row in epc_result["rows"]}
+        row = epc_data_by_uprn.get(str(prop.uprn))
+        prop.epc_rating = row["current-energy-rating"]
+        prop.epc_score = row["current-energy-efficiency"]
 
-def get_urpns_from_properties(properties):
-    base_str = "uprn"
-    result = ""
-    for prop in properties:
-        result += f"{base_str}={prop.uprn}&"
-    return result
+def format_urpn_from_property(uprn):
+    return f"uprn={uprn}"
 
 def set_missing_addresses(property):
     if not property.address:
@@ -61,13 +52,10 @@ def set_missing_addresses(property):
         if response:
             property.address = response['results'][0]['DPA']['ADDRESS']
 
-
-
 def setting_void_properties(list_of_properties):
     for i in range(len(list_of_properties)):
         if i %3 == 0:
             list_of_properties[i].void = True
-
 
 def filter_for_void(list_of_properties):
 
