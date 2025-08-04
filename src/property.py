@@ -6,8 +6,8 @@ WARM_MATERIALS = ["Brick Or Block Or Stone", "Contrete"]
 class Property():
     def __init__(self, uprn):
         self.uprn = uprn
-        self.epc_rating = ''
-        self.epc_score = ''
+        self.epc_rating = 'No Rating'
+        self.epc_score = 'No Score'
         self.address = ''
         self.age = 0
         self.connectivity = ''
