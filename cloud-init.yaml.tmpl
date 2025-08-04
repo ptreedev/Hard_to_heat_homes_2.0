@@ -37,7 +37,9 @@ runcmd:
   - git clone https://github.com/ptreedev/Hard_to_heat_homes_2.0.git /home/ubuntu/Hard_to_heat_homes_2.0
 
   # Build docker image
-  - docker build -t myapp:latest /home/ubuntu/Hard_to_heat_homes_2.0
+  - docker build -t myapp .
+
+
   - docker stop myapp || true
   - docker rm myapp || true
 
