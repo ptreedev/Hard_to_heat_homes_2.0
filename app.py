@@ -22,6 +22,7 @@ properties = get_properties_from_os(list_of_buildings)
 properties = filter_properties_by_council_code(elbmridge_council_code, properties)
 
 get_attributes_from_epc(properties[:30])
+
 setting_void_properties(properties)
 for i in range(len(properties)):
     # set_missing_addresses(properties[i])
@@ -34,14 +35,15 @@ def home():
 
 @app.route("/<int:uprn>")
 def property(uprn):
+    
     prop = None
     for property in properties:
         if property.uprn == uprn:
             prop = property 
-            # handle error 404
-
+            break
+    get_attributes_from_epc(prop, uprn)
+        
     return render_template("property.html", property=prop, key=OS_KEY)
-
 
 
 
