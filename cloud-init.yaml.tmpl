@@ -31,7 +31,7 @@ runcmd:
   - systemctl start docker
   - systemctl enable docker
 
-  - git clone --branch automation --single-branch https://github.com/ptreedev/Hard_to_heat_homes_2.0 /home/ubuntu/Hard_to_heat_homes_2.0
+  - git clone https://github.com/ptreedev/Hard_to_heat_homes_2.0 /home/ubuntu/Hard_to_heat_homes_2.0
 
   - docker build -t myapp:latest /home/ubuntu/Hard_to_heat_homes_2.0
 
