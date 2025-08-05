@@ -29,3 +29,4 @@ def test_get_attributes_from_epc(mocker):
             break
     assert prop.epc_rating == matching_row["current-energy-rating"]
     assert prop.epc_score == matching_row["current-energy-efficiency"]
+    assert prop.energy_usage == matching_row["energy-consumption-current"]
