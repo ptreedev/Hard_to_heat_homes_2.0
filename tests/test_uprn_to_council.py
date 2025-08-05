@@ -4,9 +4,9 @@ import pytest
 @pytest.mark.parametrize(
         "uprn, expected_council_code",
         [
-            ("32052663", "E08000028"),
-            ("100031827444", "E07000196"),
-            ("100071361070", "E07000220")
+            ("100061342030", "E07000207"),
+            ("100061342031", "E07000207"),
+            ("10033322698", "E07000207")
         ]
 )
 def test_get_council_code_for_uprn_returns_correct_for_valid_uprn(uprn, expected_council_code):
