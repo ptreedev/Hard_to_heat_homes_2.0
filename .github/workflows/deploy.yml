@@ -46,7 +46,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::261219435789:role/Hard_to_heat_homes_2.0
+          role-to-assume: ${{ secrets.ROLE }} 
           aws-region: eu-west-2
 
       - name: Set up Terraform
@@ -72,4 +72,6 @@ jobs:
           TF_VAR_epc_api_key: ${{ secrets.EPC_API_KEY }}
           TF_VAR_os_api_key: ${{ secrets.OS_API_KEY }}
 
-        run: terraform apply -auto-approve 
+        run: |
+          terraform taint aws_instance.app_server || true
+          terraform apply -auto-approve 
