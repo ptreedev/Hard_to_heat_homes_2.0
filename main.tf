@@ -11,6 +11,18 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
+variable "epc_api_key" {
+  description = "EPC API key"
+  type = string
+  sensitive = true
+}
+
+variable "os_api_key" {
+  description = "OS API key"
+  type = string
+  sensitive = true
+}
+
 resource "tls_private_key" "ssh_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
@@ -34,6 +46,8 @@ resource "aws_instance" "app_server" {
   key_name               = "terraform-key"
   user_data = templatefile("${path.module}/cloud-init.yaml.tmpl", {
     instance_name = "hard-to-heat-homes-2.0"
+    epc_api_key = var.epc_api_key
+    os_api_key = var.os_api_key
   })
 
 
