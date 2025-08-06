@@ -20,5 +20,3 @@ data/onsud_apr_2025
 .terraform.lock.hcl
 *.tfstate.backup
 data/uprn_to_council_data_SE.csv
-
-
