@@ -2,18 +2,25 @@ from flask import Flask, render_template
 from src.os_api import os_api_call
 from src.utils import get_properties_from_os, get_attributes_from_epc, set_missing_addresses, setting_void_properties
 from src.variables import OS_KEY
+from src.council_data_utils import get_bbox_for_council_code, filter_properties_by_council_code
 
 app = Flask(__name__)
+
+elbmridge_council_code = "E07000207"
+elmbridge_bbox = get_bbox_for_council_code(elbmridge_council_code)
 
 HEADERS = {"Accept": "application/json"}
 PARAMS = {
         "key": OS_KEY,
         "filter": "buildinguse_oslandusetiera = 'Residential Accommodation' AND mainbuildingid_ismainbuilding = 'Yes'",
-        "bbox": "-0.373641,51.399234,-0.372031,51.399977",
+        "bbox": elmbridge_bbox,
          }
+
 list_of_buildings = os_api_call(HEADERS, PARAMS)["features"]
 
 properties = get_properties_from_os(list_of_buildings)
+properties = filter_properties_by_council_code(elbmridge_council_code, properties)
+
 
 setting_void_properties(properties)
 for i in range(len(properties)):
@@ -40,4 +47,4 @@ def property(uprn):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
