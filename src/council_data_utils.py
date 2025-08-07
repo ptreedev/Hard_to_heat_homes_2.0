@@ -2,6 +2,7 @@ import geopandas as gpd
 import pandas as pd
 import json
 from shapely.geometry import shape
+from src.epc_api import epc_api_call_address
 
 with open("data/councils_data_DEMO.json") as bbox_json:
         councils_data = json.load(bbox_json)
