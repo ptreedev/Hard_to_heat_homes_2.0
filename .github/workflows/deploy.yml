@@ -73,5 +73,4 @@ jobs:
           TF_VAR_os_api_key: ${{ secrets.OS_API_KEY }}
 
         run: |
-          terraform taint aws_instance.app_server || true
           terraform apply -auto-approve 
